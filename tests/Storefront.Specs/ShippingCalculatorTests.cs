@@ -47,4 +47,16 @@ public class ShippingCalculatorTests : StorefrontTestBase
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => _shipping.Cost(0m, 20.00m));
     }
+
+    [Fact]
+    public void Shipping_AddsSurcharge_ForExpress()
+    {
+        Assert.Equal(13.90m, _shipping.Cost(3m, 20.00m, ShippingSpeed.Express));
+    }
+
+    [Fact]
+    public void Shipping_ChargesOnlySurcharge_ForExpressAboveOrderThreshold()
+    {
+        Assert.Equal(6.00m, _shipping.Cost(3m, 150.00m, ShippingSpeed.Express));
+    }
 }

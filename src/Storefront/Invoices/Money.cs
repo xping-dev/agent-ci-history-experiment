@@ -11,4 +11,10 @@ public static class Money
     {
         return amount.ToString("N2", StoreCulture) + " €";
     }
+
+    /// <summary>Like <see cref="Format"/>, but shows a zero amount as "Free".</summary>
+    public static string FormatOrFree(decimal amount)
+    {
+        return amount == 0m ? "Free" : Format(amount);
+    }
 }

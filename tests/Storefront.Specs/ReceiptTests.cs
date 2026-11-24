@@ -19,6 +19,14 @@ public class ReceiptTests
     }
 
     [Fact]
+    public void Receipt_ShowsFree_WhenShippingCostsNothing()
+    {
+        var order = Order(8) with { Shipping = 0m };
+
+        Assert.Contains("Free", Receipt.Render(order));
+    }
+
+    [Fact]
     public void Receipt_RendersBatch_WithinTimeBudget()
     {
         var orders = Enumerable.Range(1, BatchSize).Select(Order).ToList();

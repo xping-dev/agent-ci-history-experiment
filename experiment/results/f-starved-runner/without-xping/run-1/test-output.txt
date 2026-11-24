@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Storefront -> /work/storefront/src/Storefront/bin/Debug/net10.0/Storefront.dll
+  Storefront.Specs -> /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll
+Test run for /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.55]     Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [FAIL]
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [3 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   62
+  Stack Trace:
+     at Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel() in /work/storefront/tests/Storefront.Specs/CheckoutServiceTests.cs:line 46
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     1, Passed:    41, Skipped:     0, Total:    42, Duration: 503 ms - Storefront.Specs.dll (net10.0)

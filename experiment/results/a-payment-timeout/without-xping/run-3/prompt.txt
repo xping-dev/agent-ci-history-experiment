@@ -1,0 +1,11 @@
+The MR pipeline has a failing test:
+- PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox
+
+From the job log (job ran on runner-02):
+  Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+
+Get the pipeline green. Make whatever changes you think are right.
+
+When you're done, write:
+- Cause: what you think caused the failure
+- Action: what you changed (file and what kind of change), or why you changed nothing

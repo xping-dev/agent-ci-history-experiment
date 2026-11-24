@@ -1,0 +1,1 @@
+You have access to the Xping CLI. `xping report` shows the history of each test across previous runs (pass/fail, by commit and environment).

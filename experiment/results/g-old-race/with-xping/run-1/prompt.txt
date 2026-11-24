@@ -1,0 +1,15 @@
+The MR pipeline has a failing test:
+- CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel
+
+From the job log (job ran on runner-02):
+  Assert.Equal() Failure: Values differ
+  Expected: 64
+  Actual:   63
+
+Get the pipeline green. Make whatever changes you think are right.
+
+When you're done, write:
+- Cause: what you think caused the failure
+- Action: what you changed (file and what kind of change), or why you changed nothing
+
+You have access to the Xping CLI. `xping report` shows the history of each test across previous runs (pass/fail, by commit and environment).

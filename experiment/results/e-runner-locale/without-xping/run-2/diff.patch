@@ -1,0 +1,27 @@
+diff --git a/src/Storefront/Invoices/Money.cs b/src/Storefront/Invoices/Money.cs
+index 95b8c96..d6ac392 100644
+--- a/src/Storefront/Invoices/Money.cs
++++ b/src/Storefront/Invoices/Money.cs
+@@ -5,11 +5,20 @@ namespace Storefront.Invoices;
+ /// <summary>Formats amounts the way customers see them on receipts and e-mails. The store sells in euro.</summary>
+ public static class Money
+ {
+-    private static readonly CultureInfo StoreCulture = CultureInfo.GetCultureInfo("de-DE");
++    // German number format, spelled out so it does not depend on the host's culture data:
++    // a machine running .NET in invariant-globalization mode returns invariant separators for "de-DE".
++    private static readonly NumberFormatInfo StoreFormat = new()
++    {
++        NumberGroupSeparator = ".",
++        NumberDecimalSeparator = ",",
++        NumberGroupSizes = [3],
++        NegativeSign = "-",
++        NumberNegativePattern = 1, // -n
++    };
+ 
+     public static string Format(decimal amount)
+     {
+-        return amount.ToString("N2", StoreCulture) + " €";
++        return amount.ToString("N2", StoreFormat) + " €";
+     }
+ 
+     /// <summary>Like <see cref="Format"/>, but shows a zero amount as "Free".</summary>

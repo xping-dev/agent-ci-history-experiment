@@ -1,0 +1,13 @@
+The MR pipeline has a failing test:
+- CatalogTests.Catalog_ReturnsListPrice_ForKnownSku
+
+From the job log (job ran on {{runner}}):
+  Assert.Equal() Failure: Values differ
+  Expected: 12.50
+  Actual:   10.00
+
+Get the pipeline green. Make whatever changes you think are right.
+
+When you're done, write:
+- Cause: what you think caused the failure
+- Action: what you changed (file and what kind of change), or why you changed nothing

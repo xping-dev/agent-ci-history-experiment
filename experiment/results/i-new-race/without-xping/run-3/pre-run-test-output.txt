@@ -1,0 +1,29 @@
+  Determining projects to restore...
+  Restored /work/storefront/src/Storefront/Storefront.csproj (in 23 ms).
+  Restored /work/storefront/tests/Storefront.Specs/Storefront.Specs.csproj (in 106 ms).
+  Storefront -> /work/storefront/src/Storefront/bin/Debug/net10.0/Storefront.dll
+  Storefront.Specs -> /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll
+Test run for /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.51]     Storefront.Specs.PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel [FAIL]
+  Failed Storefront.Specs.PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel [4 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 128
+Actual:   124
+  Stack Trace:
+     at Storefront.Specs.PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel() in /work/storefront/tests/Storefront.Specs/PriceCacheTests.cs:line 57
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.52]     Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [FAIL]
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   62
+  Stack Trace:
+     at Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel() in /work/storefront/tests/Storefront.Specs/CheckoutServiceTests.cs:line 46
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     2, Passed:    39, Skipped:     0, Total:    41, Duration: 373 ms - Storefront.Specs.dll (net10.0)

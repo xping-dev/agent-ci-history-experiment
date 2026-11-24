@@ -1,0 +1,19 @@
+  Determining projects to restore...
+  Restored /work/storefront/src/Storefront/Storefront.csproj (in 23 ms).
+  Restored /work/storefront/tests/Storefront.Specs/Storefront.Specs.csproj (in 109 ms).
+  Storefront -> /work/storefront/src/Storefront/bin/Debug/net10.0/Storefront.dll
+  Storefront.Specs -> /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll
+Test run for /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.34]     Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms [FAIL]
+  Failed Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 7,90
+Actual:   14,90
+  Stack Trace:
+     at Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms() in /work/storefront/tests/Storefront.Specs/ShippingCalculatorTests.cs:line 24
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     1, Passed:    41, Skipped:     0, Total:    42, Duration: 321 ms - Storefront.Specs.dll (net10.0)

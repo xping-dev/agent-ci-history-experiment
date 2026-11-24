@@ -1,0 +1,8 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Storefront -> /work/storefront/src/Storefront/bin/Debug/net10.0/Storefront.dll
+  Storefront.Specs -> /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll
+Test run for /work/storefront/tests/Storefront.Specs/bin/Debug/net10.0/Storefront.Specs.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:    42, Skipped:     0, Total:    42, Duration: 330 ms - Storefront.Specs.dll (net10.0)

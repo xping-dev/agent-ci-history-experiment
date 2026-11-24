@@ -1,0 +1,21 @@
+diff --git a/src/Storefront/Invoices/LedgerWriter.cs b/src/Storefront/Invoices/LedgerWriter.cs
+index 91c86ba..962162d 100644
+--- a/src/Storefront/Invoices/LedgerWriter.cs
++++ b/src/Storefront/Invoices/LedgerWriter.cs
+@@ -10,12 +10,14 @@ public class LedgerWriter
+     public int Write(IEnumerable<Invoice> invoices, string path)
+     {
+         // Write as we go: the month-end ledger no longer has to fit in memory.
+-        File.WriteAllText(path, Header + Environment.NewLine);
++        // One open handle for the whole file: reopening it per line is slow, especially on the staging share.
++        using var writer = new StreamWriter(path, append: false);
++        writer.WriteLine(Header);
+ 
+         var count = 0;
+         foreach (var invoice in invoices)
+         {
+-            File.AppendAllText(path, Line(invoice) + Environment.NewLine);
++            writer.WriteLine(Line(invoice));
+             count++;
+         }
+ 

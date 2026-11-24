@@ -1,0 +1,446 @@
+## run 3 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [620 ms]
+  Error Message:
+   Exporting 1000 invoices took 479 ms, budget is 250 ms.
+## run 4 runner-04 main
+  Failed Storefront.Specs.PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox [2 s]
+  Error Message:
+   Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+---- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+-------- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+------------ System.IO.IOException : Unable to read data from the transport connection: Operation canceled.
+---------------- System.Net.Sockets.SocketException : Operation canceled
+## run 5 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 7 runner-01 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   62
+## run 8 runner-02 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 9 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [554 ms]
+  Error Message:
+   Exporting 1000 invoices took 447 ms, budget is 250 ms.
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 11 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 12 runner-06 main
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [395 ms]
+  Error Message:
+   Rendering 60000 receipts took 331 ms, budget is 250 ms.
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 13 runner-01 main
+  Failed Storefront.Specs.PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox [2 s]
+  Error Message:
+   Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+---- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+-------- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+------------ System.IO.IOException : Unable to read data from the transport connection: Operation canceled.
+---------------- System.Net.Sockets.SocketException : Operation canceled
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [286 ms]
+  Error Message:
+   Rendering 60000 receipts took 252 ms, budget is 250 ms.
+## run 15 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [592 ms]
+  Error Message:
+   Exporting 1000 invoices took 452 ms, budget is 250 ms.
+## run 16 runner-04 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 17 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 19 runner-01 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 20 runner-02 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+  Failed Storefront.Specs.PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox [2 s]
+  Error Message:
+   Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+---- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+-------- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+------------ System.IO.IOException : Unable to read data from the transport connection: Operation canceled.
+---------------- System.Net.Sockets.SocketException : Operation canceled
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [3 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   60
+## run 21 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [597 ms]
+  Error Message:
+   Exporting 1000 invoices took 471 ms, budget is 250 ms.
+## run 22 runner-04 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 23 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 24 runner-06 main
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [522 ms]
+  Error Message:
+   Rendering 60000 receipts took 408 ms, budget is 250 ms.
+## run 27 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [615 ms]
+  Error Message:
+   Exporting 1000 invoices took 472 ms, budget is 250 ms.
+## run 28 runner-04 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 29 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 31 runner-01 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   61
+## run 32 runner-02 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+  Failed Storefront.Specs.PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox [2 s]
+  Error Message:
+   Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+---- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+-------- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+------------ System.IO.IOException : Unable to read data from the transport connection: Operation canceled.
+---------------- System.Net.Sockets.SocketException : Operation canceled
+## run 34 runner-01 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 35 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [594 ms]
+  Error Message:
+   Exporting 1000 invoices took 448 ms, budget is 250 ms.
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 37 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [3 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   62
+## run 39 runner-06 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 42 runner-03 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [642 ms]
+  Error Message:
+   Exporting 1000 invoices took 486 ms, budget is 250 ms.
+## run 43 runner-02 feature/gift-message
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 44 runner-01 feature/streamed-ledger
+  Failed Storefront.Specs.LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget [354 ms]
+  Error Message:
+   Writing the ledger for 3000 invoices took 353 ms, budget is 200 ms.
+## run 45 runner-06 main
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [502 ms]
+  Error Message:
+   Rendering 60000 receipts took 383 ms, budget is 250 ms.
+## run 46 runner-01 feature/invoice-customer-reference
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 47 runner-04 feature/express-shipping
+  Failed Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 7.90
+Actual:   14.90
+## run 48 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 49 runner-02 feature/free-shipping-label
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 51 runner-04 feature/streamed-ledger
+  Failed Storefront.Specs.LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget [386 ms]
+  Error Message:
+   Writing the ledger for 3000 invoices took 384 ms, budget is 200 ms.
+## run 52 runner-06 main
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 54 runner-02 feature/payment-idempotency
+  Failed Storefront.Specs.PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox [2 s]
+  Error Message:
+   Storefront.Payments.PaymentTimeoutException : Payment provider did not respond within 2 s.
+---- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+-------- System.Threading.Tasks.TaskCanceledException : The operation was canceled.
+------------ System.IO.IOException : Unable to read data from the transport connection: Operation canceled.
+---------------- System.Net.Sockets.SocketException : Operation canceled
+## run 55 runner-03 main
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [613 ms]
+  Error Message:
+   Exporting 1000 invoices took 473 ms, budget is 250 ms.
+## run 56 runner-01 feature/express-shipping
+  Failed Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 7.90
+Actual:   14.90
+## run 57 runner-03 feature/invoice-customer-reference
+  Failed Storefront.Specs.InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget [556 ms]
+  Error Message:
+   Exporting 1000 invoices took 451 ms, budget is 250 ms.
+## run 58 runner-05 main
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 59 runner-04 feature/carrier-bearer-token
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 60 runner-05 feature/free-shipping-label
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 61 runner-05 feature/free-shipping-label
+  Failed Storefront.Specs.MoneyTests.Money_FormatsAmount_InStoreCurrency [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "1.234,50 €"
+Actual:   "1,234.50 €"
+            ↑ (pos 1)
+## run 62 runner-06 main
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [514 ms]
+  Error Message:
+   Rendering 60000 receipts took 408 ms, budget is 250 ms.
+## run 63 runner-02 feature/streamed-ledger
+  Failed Storefront.Specs.LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget [344 ms]
+  Error Message:
+   Writing the ledger for 3000 invoices took 342 ms, budget is 200 ms.
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 64 runner-02 feature/streamed-ledger
+  Failed Storefront.Specs.LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget [353 ms]
+  Error Message:
+   Writing the ledger for 3000 invoices took 351 ms, budget is 200 ms.
+## run 65 runner-02 feature/express-shipping
+  Failed Storefront.Specs.ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 7.90
+Actual:   14.90
+## run 66 runner-06 feature/gift-message
+  Failed Storefront.Specs.ReceiptTests.Receipt_RendersBatch_WithinTimeBudget [555 ms]
+  Error Message:
+   Rendering 60000 receipts took 434 ms, budget is 250 ms.
+## run 69 runner-04 feature/unblock-price-lookups
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 75 runner-04 feature/unblock-price-lookups
+  Failed Storefront.Specs.PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel [4 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 128
+Actual:   126
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 79 runner-01 feature/try-price-lookup
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 81 runner-04 feature/unblock-price-lookups
+  Failed Storefront.Specs.PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 128
+Actual:   124
+## run 82 runner-01 feature/try-price-lookup
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 89 runner-02 feature/invoice-number-prefix
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [2 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 94 runner-01 feature/try-price-lookup
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+## run 95 runner-02 feature/try-price-lookup
+  Failed Storefront.Specs.CatalogTests.Catalog_ReturnsListPrice_ForKnownSku [1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 12.50
+Actual:   10.00
+## run 96 runner-01 main
+  Failed Storefront.Specs.CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox [13 ms]
+  Error Message:
+   System.Net.Http.HttpRequestException : Response status code does not indicate success: 401 (Unauthorized).
+## run 97 runner-04 feature/carrier-bearer-token
+  Failed Storefront.Specs.CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox [3 ms]
+  Error Message:
+   System.Net.Http.HttpRequestException : Response status code does not indicate success: 401 (Unauthorized).
+## run 98 runner-02 main
+  Failed Storefront.Specs.CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 64
+Actual:   63
+  Failed Storefront.Specs.CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox [3 ms]
+  Error Message:
+   System.Net.Http.HttpRequestException : Response status code does not indicate success: 401 (Unauthorized).
+## run 99 runner-01 feature/carrier-bearer-token
+  Failed Storefront.Specs.CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox [13 ms]
+  Error Message:
+   System.Net.Http.HttpRequestException : Response status code does not indicate success: 401 (Unauthorized).

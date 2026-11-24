@@ -1,0 +1,42 @@
+diff --git a/src/Storefront/Checkout/CheckoutService.cs b/src/Storefront/Checkout/CheckoutService.cs
+index 0a8c728..42cf702 100644
+--- a/src/Storefront/Checkout/CheckoutService.cs
++++ b/src/Storefront/Checkout/CheckoutService.cs
+@@ -9,7 +9,7 @@ public class CheckoutService
+     private readonly PriceCatalog _catalog;
+     private readonly CartCalculator _calculator;
+     private readonly ShippingCalculator _shipping;
+-    private int _nextInvoiceNumber = 1;
++    private int _lastInvoiceNumber;
+ 
+     public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping)
+     {
+@@ -33,6 +33,6 @@ public class CheckoutService
+             .Select(line => new InvoiceLine(line.Sku, line.Quantity, _catalog.PriceOf(line.Sku)))
+             .ToList();
+ 
+-        return new Invoice($"INV-{_nextInvoiceNumber++:00000}", customerEmail, invoiceLines, tax, shipping);
++        return new Invoice($"INV-{Interlocked.Increment(ref _lastInvoiceNumber):00000}", customerEmail, invoiceLines, tax, shipping);
+     }
+ }
+diff --git a/src/Storefront/Invoices/LedgerWriter.cs b/src/Storefront/Invoices/LedgerWriter.cs
+index 91c86ba..073c877 100644
+--- a/src/Storefront/Invoices/LedgerWriter.cs
++++ b/src/Storefront/Invoices/LedgerWriter.cs
+@@ -10,12 +10,14 @@ public class LedgerWriter
+     public int Write(IEnumerable<Invoice> invoices, string path)
+     {
+         // Write as we go: the month-end ledger no longer has to fit in memory.
+-        File.WriteAllText(path, Header + Environment.NewLine);
++        // One open handle for the whole file: reopening it per line is slow, most of all on a network share.
++        using var writer = new StreamWriter(path, append: false);
++        writer.WriteLine(Header);
+ 
+         var count = 0;
+         foreach (var invoice in invoices)
+         {
+-            File.AppendAllText(path, Line(invoice) + Environment.NewLine);
++            writer.WriteLine(Line(invoice));
+             count++;
+         }
+ 

@@ -1,0 +1,17 @@
+diff --git a/src/Storefront/Pricing/PriceCache.cs b/src/Storefront/Pricing/PriceCache.cs
+index 242d556..f411350 100644
+--- a/src/Storefront/Pricing/PriceCache.cs
++++ b/src/Storefront/Pricing/PriceCache.cs
+@@ -23,10 +23,10 @@ public static class PriceCache
+ 
+     public static decimal GetOrAdd(string sku, Func<decimal> resolve)
+     {
+-        _lookups++;
+-
+         lock (Gate)
+         {
++            _lookups++;
++
+             if (Prices.TryGetValue(sku, out var cached))
+             {
+                 return cached;

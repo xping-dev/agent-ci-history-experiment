@@ -1,0 +1,34 @@
+diff --git a/src/Storefront/Pricing/PriceCache.cs b/src/Storefront/Pricing/PriceCache.cs
+index 242d556..24290c7 100644
+--- a/src/Storefront/Pricing/PriceCache.cs
++++ b/src/Storefront/Pricing/PriceCache.cs
+@@ -12,18 +12,12 @@ public static class PriceCache
+     /// <summary>Number of lookups since the cache was last cleared. Feeds the cache hit-rate metric.</summary>
+     public static long Lookups
+     {
+-        get
+-        {
+-            lock (Gate)
+-            {
+-                return _lookups;
+-            }
+-        }
++        get => Interlocked.Read(ref _lookups);
+     }
+ 
+     public static decimal GetOrAdd(string sku, Func<decimal> resolve)
+     {
+-        _lookups++;
++        Interlocked.Increment(ref _lookups);
+ 
+         lock (Gate)
+         {
+@@ -65,7 +59,7 @@ public static class PriceCache
+         lock (Gate)
+         {
+             Prices.Clear();
+-            _lookups = 0;
++            Interlocked.Exchange(ref _lookups, 0);
+         }
+     }
+ }

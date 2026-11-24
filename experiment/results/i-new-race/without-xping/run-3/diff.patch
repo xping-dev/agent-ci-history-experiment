@@ -1,0 +1,55 @@
+diff --git a/src/Storefront/Checkout/CheckoutService.cs b/src/Storefront/Checkout/CheckoutService.cs
+index 0a8c728..42cf702 100644
+--- a/src/Storefront/Checkout/CheckoutService.cs
++++ b/src/Storefront/Checkout/CheckoutService.cs
+@@ -9,7 +9,7 @@ public class CheckoutService
+     private readonly PriceCatalog _catalog;
+     private readonly CartCalculator _calculator;
+     private readonly ShippingCalculator _shipping;
+-    private int _nextInvoiceNumber = 1;
++    private int _lastInvoiceNumber;
+ 
+     public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping)
+     {
+@@ -33,6 +33,6 @@ public class CheckoutService
+             .Select(line => new InvoiceLine(line.Sku, line.Quantity, _catalog.PriceOf(line.Sku)))
+             .ToList();
+ 
+-        return new Invoice($"INV-{_nextInvoiceNumber++:00000}", customerEmail, invoiceLines, tax, shipping);
++        return new Invoice($"INV-{Interlocked.Increment(ref _lastInvoiceNumber):00000}", customerEmail, invoiceLines, tax, shipping);
+     }
+ }
+diff --git a/src/Storefront/Pricing/PriceCache.cs b/src/Storefront/Pricing/PriceCache.cs
+index 242d556..24290c7 100644
+--- a/src/Storefront/Pricing/PriceCache.cs
++++ b/src/Storefront/Pricing/PriceCache.cs
+@@ -12,18 +12,12 @@ public static class PriceCache
+     /// <summary>Number of lookups since the cache was last cleared. Feeds the cache hit-rate metric.</summary>
+     public static long Lookups
+     {
+-        get
+-        {
+-            lock (Gate)
+-            {
+-                return _lookups;
+-            }
+-        }
++        get => Interlocked.Read(ref _lookups);
+     }
+ 
+     public static decimal GetOrAdd(string sku, Func<decimal> resolve)
+     {
+-        _lookups++;
++        Interlocked.Increment(ref _lookups);
+ 
+         lock (Gate)
+         {
+@@ -65,7 +59,7 @@ public static class PriceCache
+         lock (Gate)
+         {
+             Prices.Clear();
+-            _lookups = 0;
++            Interlocked.Exchange(ref _lookups, 0);
+         }
+     }
+ }

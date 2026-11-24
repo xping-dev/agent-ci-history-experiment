@@ -1,0 +1,22 @@
+diff --git a/src/Storefront/Checkout/CheckoutService.cs b/src/Storefront/Checkout/CheckoutService.cs
+index ecb6440..eb1fd50 100644
+--- a/src/Storefront/Checkout/CheckoutService.cs
++++ b/src/Storefront/Checkout/CheckoutService.cs
+@@ -10,7 +10,7 @@ public class CheckoutService
+     private readonly CartCalculator _calculator;
+     private readonly ShippingCalculator _shipping;
+     private readonly string _invoicePrefix;
+-    private int _nextInvoiceNumber = 1;
++    private int _lastInvoiceNumber;
+ 
+     /// <param name="invoicePrefix">Prefix of the invoice numbers, so each store has its own number range.</param>
+     public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping, string invoicePrefix = "INV")
+@@ -41,7 +41,7 @@ public class CheckoutService
+             .Select(line => new InvoiceLine(line.Sku, line.Quantity, _catalog.PriceOf(line.Sku)))
+             .ToList();
+ 
+-        var number = $"{_invoicePrefix}-{_nextInvoiceNumber++:00000}";
++        var number = $"{_invoicePrefix}-{Interlocked.Increment(ref _lastInvoiceNumber):00000}";
+         return new Invoice(number, customerEmail, invoiceLines, tax, shipping);
+     }
+ }

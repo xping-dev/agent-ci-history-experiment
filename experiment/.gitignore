@@ -1,0 +1,5 @@
+# Working files of the seeding scripts
+.slowtmp/
+.ledger-share/
+.seed-counter
+.last-seed-output.txt

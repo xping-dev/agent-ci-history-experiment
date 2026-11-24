@@ -1,0 +1,99 @@
+1	2026-11-24T09:20:55Z	runner-01	main	32f21f2	40		
+2	2026-11-24T09:20:57Z	runner-02	main	32f21f2	40		
+3	2026-11-24T09:20:59Z	runner-03	main	32f21f2	40	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 479 ms took 479 ms 
+4	2026-11-24T09:21:02Z	runner-04	main	32f21f2	40	PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox	slow-payment-sandbox 
+5	2026-11-24T09:21:03Z	runner-05	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,MoneyTests.Money_FormatsAmount_InStoreCurrency	
+6	2026-11-24T09:21:05Z	runner-06	main	32f21f2	40		
+7	2026-11-24T09:21:06Z	runner-01	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+8	2026-11-24T09:21:07Z	runner-02	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+9	2026-11-24T09:21:09Z	runner-03	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 447 ms took 447 ms 
+10	2026-11-24T09:21:10Z	runner-04	main	32f21f2	40		
+11	2026-11-24T09:21:11Z	runner-05	main	32f21f2	40	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+12	2026-11-24T09:21:17Z	runner-06	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	starved took 331 ms took 331 ms 
+13	2026-11-24T09:21:20Z	runner-01	main	32f21f2	40	PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox,ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	slow-payment-sandbox took 252 ms took 252 ms 
+14	2026-11-24T09:21:22Z	runner-02	main	32f21f2	40		
+15	2026-11-24T09:21:23Z	runner-03	main	32f21f2	40	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 452 ms took 452 ms 
+16	2026-11-24T09:21:25Z	runner-04	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+17	2026-11-24T09:21:26Z	runner-05	main	32f21f2	40	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+18	2026-11-24T09:21:27Z	runner-06	main	32f21f2	40		
+19	2026-11-24T09:21:28Z	runner-01	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+20	2026-11-24T09:21:32Z	runner-02	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox	slow-payment-sandbox 
+21	2026-11-24T09:21:34Z	runner-03	main	32f21f2	40	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 471 ms took 471 ms 
+22	2026-11-24T09:21:35Z	runner-04	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+23	2026-11-24T09:21:36Z	runner-05	main	32f21f2	40	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+24	2026-11-24T09:21:41Z	runner-06	main	32f21f2	40	ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	starved took 408 ms took 408 ms 
+25	2026-11-24T09:21:43Z	runner-01	main	32f21f2	40		
+26	2026-11-24T09:21:44Z	runner-02	main	32f21f2	40		
+27	2026-11-24T09:21:46Z	runner-03	main	32f21f2	40	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 472 ms took 472 ms 
+28	2026-11-24T09:21:47Z	runner-04	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+29	2026-11-24T09:21:48Z	runner-05	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,MoneyTests.Money_FormatsAmount_InStoreCurrency	
+30	2026-11-24T09:21:50Z	runner-06	main	32f21f2	40		
+31	2026-11-24T09:21:51Z	runner-01	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+32	2026-11-24T09:21:54Z	runner-02	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox	slow-payment-sandbox 
+33	2026-11-24T09:21:55Z	runner-04	main	32f21f2	40		
+34	2026-11-24T09:21:56Z	runner-01	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+35	2026-11-24T09:21:58Z	runner-03	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 448 ms took 448 ms 
+36	2026-11-24T09:22:00Z	runner-01	feature/payment-idempotency	55ec951	41		
+37	2026-11-24T09:22:01Z	runner-05	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,MoneyTests.Money_FormatsAmount_InStoreCurrency	
+38	2026-11-24T09:22:02Z	runner-02	feature/invoice-customer-reference	aece513	42		
+39	2026-11-24T09:22:04Z	runner-06	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+40	2026-11-24T09:22:05Z	runner-04	feature/payment-idempotency	55ec951	41		
+41	2026-11-24T09:22:06Z	runner-01	feature/free-shipping-label	ce0b58a	43		
+42	2026-11-24T09:22:08Z	runner-03	main	32f21f2	40	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 486 ms took 486 ms 
+43	2026-11-24T09:22:09Z	runner-02	feature/gift-message	9195843	42	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+44	2026-11-24T09:22:11Z	runner-01	feature/streamed-ledger	7b01276	41	LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget	took 353 ms took 353 ms 
+45	2026-11-24T09:22:16Z	runner-06	main	32f21f2	40	ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	starved took 383 ms took 383 ms 
+46	2026-11-24T09:22:18Z	runner-01	feature/invoice-customer-reference	aece513	42	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+47	2026-11-24T09:22:19Z	runner-04	feature/express-shipping	a67da70	42	ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms	
+48	2026-11-24T09:22:20Z	runner-05	main	32f21f2	40	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+49	2026-11-24T09:22:21Z	runner-02	feature/free-shipping-label	ce0b58a	43	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+50	2026-11-24T09:22:23Z	runner-02	feature/carrier-bearer-token	0ea3bce	41		
+51	2026-11-24T09:22:24Z	runner-04	feature/streamed-ledger	7b01276	41	LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget	took 384 ms took 384 ms 
+52	2026-11-24T09:22:25Z	runner-06	main	32f21f2	40	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+53	2026-11-24T09:22:27Z	runner-06	feature/gift-message	9195843	42		
+54	2026-11-24T09:22:30Z	runner-02	feature/payment-idempotency	55ec951	41	PaymentClientTests.PaymentClient_AuthorizesCard_InSandbox	slow-payment-sandbox 
+55	2026-11-24T09:22:32Z	runner-03	main	32f21f2	40	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 473 ms took 473 ms 
+56	2026-11-24T09:22:33Z	runner-01	feature/express-shipping	a67da70	42	ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms	
+57	2026-11-24T09:22:35Z	runner-03	feature/invoice-customer-reference	aece513	42	InvoiceExporterTests.InvoiceExporter_ExportsBatch_WithinTimeBudget	took 451 ms took 451 ms 
+58	2026-11-24T09:22:36Z	runner-05	main	32f21f2	40	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+59	2026-11-24T09:22:38Z	runner-04	feature/carrier-bearer-token	0ea3bce	41	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+60	2026-11-24T09:22:39Z	runner-05	feature/free-shipping-label	ce0b58a	43	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,MoneyTests.Money_FormatsAmount_InStoreCurrency	
+61	2026-11-24T09:22:40Z	runner-05	feature/free-shipping-label	ce0b58a	43	MoneyTests.Money_FormatsAmount_InStoreCurrency	
+62	2026-11-24T09:22:46Z	runner-06	main	32f21f2	40	ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	starved took 408 ms took 408 ms 
+63	2026-11-24T09:22:47Z	runner-02	feature/streamed-ledger	7b01276	41	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget	took 342 ms took 342 ms 
+64	2026-11-24T09:22:49Z	runner-02	feature/streamed-ledger	7b01276	41	LedgerWriterTests.Ledger_WritesDailyBatch_WithinTimeBudget	took 351 ms took 351 ms 
+65	2026-11-24T09:22:50Z	runner-02	feature/express-shipping	a67da70	42	ShippingCalculatorTests.Shipping_ChargesMediumRate_AtFiveKilograms	
+66	2026-11-24T09:22:56Z	runner-06	feature/gift-message	9195843	42	ReceiptTests.Receipt_RendersBatch_WithinTimeBudget	starved took 434 ms took 434 ms 
+67	2026-11-24T09:22:57Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+68	2026-11-24T09:22:58Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+69	2026-11-24T09:22:59Z	runner-04	feature/unblock-price-lookups	741337d	41	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+70	2026-11-24T09:23:01Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+71	2026-11-24T09:23:02Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+72	2026-11-24T09:23:03Z	runner-04	feature/unblock-price-lookups	741337d	41		
+73	2026-11-24T09:23:05Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+74	2026-11-24T09:23:06Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+75	2026-11-24T09:23:07Z	runner-04	feature/unblock-price-lookups	741337d	41	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel,PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel	
+76	2026-11-24T09:23:08Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+77	2026-11-24T09:23:10Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+78	2026-11-24T09:23:11Z	runner-04	feature/unblock-price-lookups	741337d	41		
+79	2026-11-24T09:23:12Z	runner-01	feature/try-price-lookup	e0e1b3d	42	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku,CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+80	2026-11-24T09:23:14Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+81	2026-11-24T09:23:15Z	runner-04	feature/unblock-price-lookups	741337d	41	PriceCacheTests.PriceCache_CountsEveryLookup_WhenLookedUpInParallel	
+82	2026-11-24T09:23:16Z	runner-01	feature/try-price-lookup	e0e1b3d	42	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+83	2026-11-24T09:23:18Z	runner-02	feature/invoice-number-prefix	5a9beea	42		
+84	2026-11-24T09:23:19Z	runner-04	feature/try-price-lookup	e0e1b3d	42		
+85	2026-11-24T09:23:20Z	runner-01	feature/invoice-number-prefix	5a9beea	42		
+86	2026-11-24T09:23:22Z	runner-02	feature/try-price-lookup	e0e1b3d	42		
+87	2026-11-24T09:23:23Z	runner-04	feature/invoice-number-prefix	5a9beea	42		
+88	2026-11-24T09:23:24Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+89	2026-11-24T09:23:26Z	runner-02	feature/invoice-number-prefix	5a9beea	42	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+90	2026-11-24T09:23:27Z	runner-04	feature/try-price-lookup	e0e1b3d	42		
+91	2026-11-24T09:23:28Z	runner-01	feature/try-price-lookup	e0e1b3d	42		
+92	2026-11-24T09:23:29Z	runner-02	feature/try-price-lookup	e0e1b3d	42		
+93	2026-11-24T09:23:31Z	runner-04	feature/try-price-lookup	e0e1b3d	42		
+94	2026-11-24T09:23:32Z	runner-01	feature/try-price-lookup	e0e1b3d	42	CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	
+95	2026-11-24T09:23:33Z	runner-02	feature/try-price-lookup	e0e1b3d	42	CatalogTests.Catalog_ReturnsListPrice_ForKnownSku	
+96	2026-11-24T09:23:34Z	runner-01	main	32f21f2	40	CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox	carrier-outage 
+97	2026-11-24T09:23:36Z	runner-04	feature/carrier-bearer-token	0ea3bce	41	CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox	carrier-outage 
+98	2026-11-24T09:23:37Z	runner-02	main	32f21f2	40	CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox,CheckoutServiceTests.Checkout_NumbersInvoicesUniquely_WhenCheckoutsRunInParallel	carrier-outage 
+99	2026-11-24T09:23:38Z	runner-01	feature/carrier-bearer-token	0ea3bce	41	CarrierClientTests.CarrierClient_ReturnsQuote_FromSandbox	carrier-outage 

@@ -1,0 +1,34 @@
+diff --git a/src/Storefront/Checkout/CheckoutService.cs b/src/Storefront/Checkout/CheckoutService.cs
+index 0a8c728..42cf702 100644
+--- a/src/Storefront/Checkout/CheckoutService.cs
++++ b/src/Storefront/Checkout/CheckoutService.cs
+@@ -9,7 +9,7 @@ public class CheckoutService
+     private readonly PriceCatalog _catalog;
+     private readonly CartCalculator _calculator;
+     private readonly ShippingCalculator _shipping;
+-    private int _nextInvoiceNumber = 1;
++    private int _lastInvoiceNumber;
+ 
+     public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping)
+     {
+@@ -33,6 +33,6 @@ public class CheckoutService
+             .Select(line => new InvoiceLine(line.Sku, line.Quantity, _catalog.PriceOf(line.Sku)))
+             .ToList();
+ 
+-        return new Invoice($"INV-{_nextInvoiceNumber++:00000}", customerEmail, invoiceLines, tax, shipping);
++        return new Invoice($"INV-{Interlocked.Increment(ref _lastInvoiceNumber):00000}", customerEmail, invoiceLines, tax, shipping);
+     }
+ }
+diff --git a/src/Storefront/Shipping/ShippingCalculator.cs b/src/Storefront/Shipping/ShippingCalculator.cs
+index b205daa..b3213d4 100644
+--- a/src/Storefront/Shipping/ShippingCalculator.cs
++++ b/src/Storefront/Shipping/ShippingCalculator.cs
+@@ -45,7 +45,7 @@ public class ShippingCalculator
+     {
+         foreach (var (maxWeightKg, rate) in Brackets)
+         {
+-            if (weightKg < maxWeightKg)
++            if (weightKg <= maxWeightKg)
+             {
+                 return rate;
+             }

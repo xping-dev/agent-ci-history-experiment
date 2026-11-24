@@ -1,0 +1,13 @@
+diff --git a/src/Storefront/Shipping/ShippingCalculator.cs b/src/Storefront/Shipping/ShippingCalculator.cs
+index b205daa..b3213d4 100644
+--- a/src/Storefront/Shipping/ShippingCalculator.cs
++++ b/src/Storefront/Shipping/ShippingCalculator.cs
+@@ -45,7 +45,7 @@ public class ShippingCalculator
+     {
+         foreach (var (maxWeightKg, rate) in Brackets)
+         {
+-            if (weightKg < maxWeightKg)
++            if (weightKg <= maxWeightKg)
+             {
+                 return rate;
+             }

@@ -1,0 +1,42 @@
+# Builds and tests Storefront. The Xping SDK in the test project uploads
+# each test run when the XPING_APIKEY CI/CD variable is set (masked + protected).
+# Other CI/CD variables the tests read: PAYMENTS_SANDBOX_URL (payment provider's sandbox),
+# CARRIER_SANDBOX_URL and CARRIER_SANDBOX_TOKEN (parcel carrier's sandbox),
+# LEDGER_STAGING_DIR (accounting team's staging share, mounted on every runner).
+
+image: mcr.microsoft.com/dotnet/sdk:10.0
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages:
+  - build
+  - test
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_NOLOGO: "1"
+  NUGET_PACKAGES: $CI_PROJECT_DIR/.nuget/packages
+
+cache:
+  key:
+    files:
+      - tests/Storefront.Specs/Storefront.Specs.csproj
+      - src/Storefront/Storefront.csproj
+  paths:
+    - .nuget/packages
+
+build:
+  stage: build
+  script:
+    - dotnet build --configuration Release
+
+test:
+  stage: test
+  script:
+    - dotnet test --configuration Release --logger "console;verbosity=normal"

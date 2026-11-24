@@ -28,6 +28,11 @@ public class InvoiceExporter
         var text = new StringBuilder();
         text.AppendLine(CultureInfo.InvariantCulture, $"Invoice {invoice.Number}");
         text.AppendLine(CultureInfo.InvariantCulture, $"Customer: {invoice.CustomerEmail}");
+
+        if (!string.IsNullOrWhiteSpace(invoice.CustomerReference))
+        {
+            text.AppendLine(CultureInfo.InvariantCulture, $"Your reference: {invoice.CustomerReference.Trim()}");
+        }
         text.AppendLine();
 
         foreach (var line in invoice.Lines)

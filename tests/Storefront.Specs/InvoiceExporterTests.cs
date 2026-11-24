@@ -50,7 +50,10 @@ public class InvoiceExporterTests : StorefrontTestBase, IDisposable
                 $"customer{i}@example.com",
                 new[] { new InvoiceLine("MUG", 2, 12.50m), new InvoiceLine("TEA", 4, 4.25m) },
                 8.40m,
-                7.90m))
+                7.90m)
+            {
+                CustomerReference = $"PO-{4000 + i}",
+            })
             .ToList();
     }
 }

@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
 namespace Storefront.Shipping;
@@ -25,7 +26,8 @@ public class CarrierClient
         var url = new Uri(_baseUrl, $"v1/quotes?weightKg={weight}&postcode={Uri.EscapeDataString(postcode)}");
 
         using var request = new HttpRequestMessage(HttpMethod.Get, url);
-        request.Headers.Add("X-Api-Token", _apiToken);
+        // The carrier retires the X-Api-Token header at the end of the year; bearer tokens are accepted already.
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken);
 
         using var response = await _http.SendAsync(request);
         response.EnsureSuccessStatusCode();

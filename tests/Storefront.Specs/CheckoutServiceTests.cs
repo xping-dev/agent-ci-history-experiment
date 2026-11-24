@@ -47,6 +47,22 @@ public class CheckoutServiceTests : StorefrontTestBase
     }
 
     [Fact]
+    public void Checkout_UsesStorePrefix_InInvoiceNumbers()
+    {
+        var service = new CheckoutService(Catalog, new ShippingCalculator(), "ber");
+
+        var invoice = service.Checkout("ana@example.com", new[] { new CartLine("TEA", 1) });
+
+        Assert.Equal("BER-00001", invoice.Number);
+    }
+
+    [Fact]
+    public void Checkout_RejectsEmptyInvoicePrefix()
+    {
+        Assert.Throws<ArgumentException>(() => new CheckoutService(Catalog, new ShippingCalculator(), " "));
+    }
+
+    [Fact]
     public void Checkout_ShipsFree_ForLargeOrder()
     {
         var service = new CheckoutService(Catalog, new ShippingCalculator());

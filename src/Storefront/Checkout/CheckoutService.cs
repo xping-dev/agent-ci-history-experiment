@@ -9,10 +9,18 @@ public class CheckoutService
     private readonly PriceCatalog _catalog;
     private readonly CartCalculator _calculator;
     private readonly ShippingCalculator _shipping;
+    private readonly string _invoicePrefix;
     private int _nextInvoiceNumber = 1;
 
-    public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping)
+    /// <param name="invoicePrefix">Prefix of the invoice numbers, so each store has its own number range.</param>
+    public CheckoutService(PriceCatalog catalog, ShippingCalculator shipping, string invoicePrefix = "INV")
     {
+        if (string.IsNullOrWhiteSpace(invoicePrefix))
+        {
+            throw new ArgumentException("Invoice prefix is empty.", nameof(invoicePrefix));
+        }
+
+        _invoicePrefix = invoicePrefix.Trim().ToUpperInvariant();
         _catalog = catalog;
         _calculator = new CartCalculator(catalog);
         _shipping = shipping;
@@ -33,6 +41,7 @@ public class CheckoutService
             .Select(line => new InvoiceLine(line.Sku, line.Quantity, _catalog.PriceOf(line.Sku)))
             .ToList();
 
-        return new Invoice($"INV-{_nextInvoiceNumber++:00000}", customerEmail, invoiceLines, tax, shipping);
+        var number = $"{_invoicePrefix}-{_nextInvoiceNumber++:00000}";
+        return new Invoice(number, customerEmail, invoiceLines, tax, shipping);
     }
 }

@@ -25,6 +25,8 @@ The full analysis, the per-run table and the limits are in [`experiment/results.
 
 Both conditions get the same prompt and the same working copy with its git history. The agent may read and edit files, run read-only git commands and run `dotnet test`. It has no remote and no access to pipelines.
 
+All 60 runs used Claude Code 2.1.331 with the model `claude-fable-5-2` (recorded in every `transcript.json`, field `modelUsage`) and Xping CLI 1.0.0-rc.8.35.
+
 With Xping, the agent also gets one sentence ([`experiment/xping-addendum.md`](experiment/xping-addendum.md)) and may run `xping report` and `xping where`.
 
 A run scores one point only if the action and the stated cause are both correct. Each scenario has a ground truth that was written before the agent runs; only its history line was filled in afterwards, from the seed log. Cases the ground truth does not cover are marked unclear, not decided.
@@ -84,7 +86,7 @@ Requirements:
 
 - **macOS with Docker Desktop.** The scripts were only run there. The slow disk of `runner-03` and the slow ledger share rely on the slow file sharing between a Mac folder and a container. On Linux those mounts are fast, and scenarios b and h will not behave the same.
 - **.NET 10 SDK**, Python 3, git.
-- **Claude Code**, with your own Anthropic usage. The agent runs use the model your Claude Code is set to.
+- **Claude Code**, with your own Anthropic usage. The agent runs use the model your Claude Code is set to. The published runs used `claude-fable-5-2`.
 - **An Xping account**, to seed the history and for the with-Xping condition. Access is by application, as a 3-week paid pilot: <https://xping.io/contact?pilot=True>. You need an upload key for a workspace and the Xping CLI signed in to the same workspace (`xping login`).
 
 Without an Xping account you can still read everything and re-run the without-Xping condition against the published `seed-log.tsv`.

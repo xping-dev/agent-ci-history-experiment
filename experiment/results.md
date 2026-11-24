@@ -6,6 +6,8 @@ The storefront code in this repo (called `storefront-full` while the experiment 
 
 **What is compared.** Both conditions get the same prompt and the same repo with its git history, and may read files, edit files and run `dotnet test`. Read-only git commands were not blocked: all 60 runs ran `git show`, `git log` or `git diff` and saw what the MR changed. Neither condition has access to GitLab (no remote, no `glab`), so the agents without Xping had no record of earlier pipeline runs at all. With Xping the agent also gets one sentence about the CLI and may run `xping report` and `xping where`. So the experiment measures test history from Xping against no CI history, not against another source of CI history such as GitLab's pipeline pages.
 
+**Agent.** All 60 runs used Claude Code 2.1.331 with the model `claude-fable-5-2`. The model ID is in every `transcript.json` (field `modelUsage`). The Claude Code version comes from the local session logs, which are not published. `run.sh` passes no model option, so the runs used the model Claude Code was set to on the machine. Xping CLI: 1.0.0-rc.8.35.
+
 ## Summary
 
 | | Without Xping | With Xping |

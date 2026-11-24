@@ -21,6 +21,14 @@ public static class Receipt
         text.AppendLine("VAT".PadRight(24) + Money.Format(invoice.Tax).PadLeft(14));
         text.AppendLine("Shipping".PadRight(24) + Money.Format(invoice.Shipping).PadLeft(14));
         text.AppendLine("Total".PadRight(24) + Money.Format(invoice.Total).PadLeft(14));
+
+        if (!string.IsNullOrWhiteSpace(invoice.GiftMessage))
+        {
+            text.AppendLine();
+            text.AppendLine("Gift message:");
+            text.AppendLine(invoice.GiftMessage.Trim());
+        }
+
         return text.ToString();
     }
 }

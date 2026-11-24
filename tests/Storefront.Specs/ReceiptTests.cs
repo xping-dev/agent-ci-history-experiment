@@ -19,6 +19,20 @@ public class ReceiptTests
     }
 
     [Fact]
+    public void Receipt_PrintsGiftMessage_WhenSet()
+    {
+        var order = Order(8) with { GiftMessage = "Happy birthday, Ana!" };
+
+        Assert.EndsWith("Gift message:" + Environment.NewLine + "Happy birthday, Ana!" + Environment.NewLine, Receipt.Render(order));
+    }
+
+    [Fact]
+    public void Receipt_HasNoGiftSection_WithoutMessage()
+    {
+        Assert.DoesNotContain("Gift message", Receipt.Render(Order(9)));
+    }
+
+    [Fact]
     public void Receipt_RendersBatch_WithinTimeBudget()
     {
         var orders = Enumerable.Range(1, BatchSize).Select(Order).ToList();

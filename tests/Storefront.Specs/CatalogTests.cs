@@ -26,4 +26,18 @@ public class CatalogTests
     {
         Assert.Throws<KeyNotFoundException>(() => _catalog.PriceOf("LAMP"));
     }
+
+    [Fact]
+    public void Catalog_TryPriceOf_ReturnsFalse_ForUnknownSku()
+    {
+        Assert.False(_catalog.TryPriceOf("LAMP", out var price));
+        Assert.Equal(0m, price);
+    }
+
+    [Fact]
+    public void Catalog_TryPriceOf_ReturnsPrice_ForKnownSku()
+    {
+        Assert.True(_catalog.TryPriceOf("KETTLE", out var price));
+        Assert.Equal(39.00m, price);
+    }
 }

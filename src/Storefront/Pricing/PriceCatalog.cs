@@ -19,7 +19,22 @@ public class PriceCatalog
 
     public decimal PriceOf(string sku)
     {
-        return PriceCache.GetOrAdd(sku, () => ListPriceOf(sku));
+        return TryPriceOf(sku, out var price)
+            ? price
+            : throw new KeyNotFoundException($"Unknown SKU '{sku}'.");
+    }
+
+    /// <summary>Looks up a price without throwing, for SKUs that may have been retired.</summary>
+    public bool TryPriceOf(string sku, out decimal price)
+    {
+        if (!_listPrices.ContainsKey(sku))
+        {
+            price = 0m;
+            return false;
+        }
+
+        price = PriceCache.GetOrAdd(sku, () => ListPriceOf(sku));
+        return true;
     }
 
     /// <summary>Starts a promotion: the SKU sells at a percentage off its list price.</summary>

@@ -50,6 +50,24 @@ Each scenario is one MR branch. In each, one test failed in the MR pipeline.
 
 Prompts, ground truths and scoring rules are in [`experiment/scenarios/`](experiment/scenarios/).
 
+### How the seven failures not caused by the MR are produced
+
+These are real `dotnet test` failures. They were produced in the Docker runners while the history was seeded, by making the environment bad, not the code. The MR commits in these scenarios do not touch what fails.
+
+| Scenario | How the failure is produced |
+|---|---|
+| a-payment-timeout | `tools/sandbox.py`, the stand-in payment provider, answers slowly in some runs, so the test times out |
+| j-carrier-outage | `tools/sandbox.py` rejects every carrier call in the runs marked `carrier-outage`, on every branch |
+| b-slow-runner | `runner-03` has its temp directory on a slow mount, so a timing check fails in every run there |
+| e-runner-locale | `runner-05` runs .NET without locale data, so the money format comes out wrong in every run there |
+| f-starved-runner | `runner-06` has one CPU core, shared with a busy process, in some runs, so a timing check fails |
+| c-test-order | The test depends on the test order. It fails by chance on any runner, also on `main` (10 of 46 runs) |
+| g-old-race | A race that is already in `main`. It fails by chance (13 of 46 runs on `main`) |
+
+The first five are steered by the seeding script. The last two are not steered.
+
+The agent does not see these runs. It is only told that the test failed in the MR pipeline, and on its own machine the test usually passes. Without history it has to judge from the code alone whether the MR caused the failure. With Xping it can see that the test also fails on `main`, or only on one runner.
+
 ## What is in this repo
 
 - `src/`, `tests/`, `Storefront.sln`: the storefront, a small .NET shop backend written for this experiment. Test project `Storefront.Specs`.

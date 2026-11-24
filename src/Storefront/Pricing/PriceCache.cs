@@ -23,18 +23,25 @@ public static class PriceCache
 
     public static decimal GetOrAdd(string sku, Func<decimal> resolve)
     {
+        _lookups++;
+
         lock (Gate)
         {
-            _lookups++;
-
-            if (!Prices.TryGetValue(sku, out var price))
+            if (Prices.TryGetValue(sku, out var cached))
             {
-                price = resolve();
-                Prices[sku] = price;
+                return cached;
             }
-
-            return price;
         }
+
+        // Resolve outside the lock: a slow price list no longer blocks lookups of other SKUs.
+        var price = resolve();
+
+        lock (Gate)
+        {
+            Prices[sku] = price;
+        }
+
+        return price;
     }
 
     public static void Set(string sku, decimal price)

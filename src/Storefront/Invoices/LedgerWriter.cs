@@ -1,5 +1,4 @@
 using System.Globalization;
-using System.Text;
 
 namespace Storefront.Invoices;
 
@@ -10,17 +9,16 @@ public class LedgerWriter
 
     public int Write(IEnumerable<Invoice> invoices, string path)
     {
-        var text = new StringBuilder();
-        text.AppendLine(Header);
+        // Write as we go: the month-end ledger no longer has to fit in memory.
+        File.WriteAllText(path, Header + Environment.NewLine);
 
         var count = 0;
         foreach (var invoice in invoices)
         {
-            text.AppendLine(Line(invoice));
+            File.AppendAllText(path, Line(invoice) + Environment.NewLine);
             count++;
         }
 
-        File.WriteAllText(path, text.ToString());
         return count;
     }
 

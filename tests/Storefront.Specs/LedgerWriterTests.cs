@@ -30,6 +30,17 @@ public class LedgerWriterTests : IDisposable
     }
 
     [Fact]
+    public void Ledger_WritesInvoices_FromLazySequence()
+    {
+        var path = Path.Combine(_directory, "ledger.csv");
+
+        var written = new LedgerWriter().Write(Invoices(5).Where(invoice => invoice.Number != "INV-00003"), path);
+
+        Assert.Equal(4, written);
+        Assert.DoesNotContain(File.ReadAllLines(path), line => line.StartsWith("INV-00003;", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void Ledger_WritesDailyBatch_WithinTimeBudget()
     {
         var invoices = Invoices(BatchSize);

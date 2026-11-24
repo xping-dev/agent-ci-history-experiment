@@ -1,5 +1,7 @@
 using System.Globalization;
 using System.Net.Http.Json;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Storefront.Payments;
 
@@ -26,6 +28,9 @@ public class PaymentClient
             cardToken,
         });
 
+        // The provider drops a repeated authorization for the same order instead of charging twice.
+        request.Headers.Add("Idempotency-Key", IdempotencyKey(orderId, amount));
+
         using var timeout = new CancellationTokenSource(_options.Timeout);
 
         try
@@ -40,5 +45,11 @@ public class PaymentClient
         {
             throw new PaymentTimeoutException(_options.Timeout, ex);
         }
+    }
+
+    public static string IdempotencyKey(string orderId, decimal amount)
+    {
+        var input = Encoding.UTF8.GetBytes($"{orderId}:{amount.ToString("0.00", CultureInfo.InvariantCulture)}");
+        return Convert.ToHexString(SHA256.HashData(input)).ToLowerInvariant();
     }
 }

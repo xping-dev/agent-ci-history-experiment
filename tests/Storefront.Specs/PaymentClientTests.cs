@@ -26,6 +26,16 @@ public class PaymentClientTests : StorefrontTestBase
         await Assert.ThrowsAsync<PaymentTimeoutException>(() => client.AuthorizeAsync("ORD-1002", 10.00m, "tok_visa"));
     }
 
+    [Fact]
+    public void PaymentClient_IdempotencyKey_IsStablePerOrderAndAmount()
+    {
+        var first = PaymentClient.IdempotencyKey("ORD-1001", 58.30m);
+
+        Assert.Equal(first, PaymentClient.IdempotencyKey("ORD-1001", 58.30m));
+        Assert.NotEqual(first, PaymentClient.IdempotencyKey("ORD-1001", 58.31m));
+        Assert.NotEqual(first, PaymentClient.IdempotencyKey("ORD-1002", 58.30m));
+    }
+
     // The payment provider's sandbox. CI gets the URL from the PAYMENTS_SANDBOX_URL CI/CD variable.
     private static Uri SandboxUrl()
     {
